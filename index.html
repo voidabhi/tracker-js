@@ -1,0 +1,60 @@
+      <html>
+        <head>
+          <script type="text/javascript">
+                function submit() {
+                    alert('clicked');
+                    szTrack({eventName: 'button_clicked', foo:'bar'});
+                }
+                function submit2() {
+                    alert('clicked');
+                    szTrack({eventName: 'button_2_clicked'});
+                }
+          </script>
+        </head>
+        <body>
+          <input type="button" onclick="submit()" value="click"/>
+          <input type="button" onclick="submit2()" value="click"/>
+        </body>
+      <script type="text/javascript">
+        // fetching user details
+        var TRACKER_CLIENT_DATA = (function() {
+            var userAgent = navigator.userAgent;
+            var referrer = document.referrer;
+            var params = location.search;
+
+            return {
+                "userAgent": userAgent,
+                "referrer": referrer,
+                "params": params
+            };
+        })();
+
+        // load tracking script on document load
+        // helper for loading script async
+        var helper = {};
+        helper.loadScriptAsync = function loadScriptAsync(e, n) {
+            var t = document.getElementsByTagName("head")[0],
+                a = document.createElement("script");
+            a.type = "text/javascript", a.src = e, "undefined" != typeof n && n && (a.onload = n), t.appendChild(a)
+        };
+
+        // declaring event queue -  it saves all the events to be tracked before tracking script is loaded
+        var _szTrackerEventQueue = _szTrackerEventQueue || [];
+
+        // loading script on upload dom loading
+        document.addEventListener('DOMContentLoaded', function () {
+          if(typeof helper !== 'undefined' && helper && helper.loadScriptAsync){
+            helper.loadScriptAsync('http://localhost:3030/tracker/?v=1');
+          }
+        });
+      </script>
+
+    <script type="text/javascript">
+        // registering onload event on event queue
+        if(!window._szTrackerEventQueue){
+            window._szTrackerEventQueue = []
+        }
+        // adding load event to queue
+        window._szTrackerEventQueue.push({eventName: 'm_new_load'});
+    </script>
+          </html>
