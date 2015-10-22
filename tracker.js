@@ -56,6 +56,7 @@ var visitCookie = "-some-cookie-";
 if (document.cookie = visitCookie, window.amTrack = function(e) {
         doAsyncEventPost(e)
     }, flushTrackerEventQueue(), "TRACKER_CLIENT_DATA" in window) {
+        // posting client details to backend api
     var clientApi = "http://localhost:3030/clientdetails";
     sendDataToTracker(clientApi + "?" + getQueryString(TRACKER_CLIENT_DATA))
 }
