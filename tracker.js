@@ -43,7 +43,7 @@ function flushTrackerEventQueue() {
         }
 }
 
-// unique cookie for the script
+// unique cookie set at the backend for the script
 var visitCookie = "-some-cookie-";
 /*
  - setting document cookie
