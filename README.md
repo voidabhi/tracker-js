@@ -21,5 +21,8 @@ Frontend js library for tracking events
       window._szTrackerEventQueue = [];
   }
   window._szTrackerEventQueue.push({eventName: 'm_new_load'});
+  
+  // Track the events
+  szTrack({eventName: 'button_clicked', foo:'bar'});
 ```
 
