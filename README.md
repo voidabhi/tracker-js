@@ -26,3 +26,9 @@ Frontend js library for tracking events
   szTrack({eventName: 'button_clicked', foo:'bar'});
 ```
 
+
+
+
+
+License
+=======
