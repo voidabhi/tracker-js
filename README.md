@@ -1,7 +1,7 @@
-# Tracker
+## Tracker
 Frontend js library for tracking events
 
-## Usage
+### Usage
 
 ```javascript
   // Collect initial client data
@@ -30,7 +30,7 @@ Frontend js library for tracking events
 
 
 
-## License
+### License
 
 ```
 
