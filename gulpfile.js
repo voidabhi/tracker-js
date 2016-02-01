@@ -16,5 +16,12 @@ gulp.task('jscs', function () {
         .pipe(jscs());
 });
 
-gulp.task('default', ['lint', 'jscs']);
+gulp.task('eslint', function () {
+    return gulp.src(['**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
+gulp.task('default', ['lint', 'jscs', 'eslint']);
 
