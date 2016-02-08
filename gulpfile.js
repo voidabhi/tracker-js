@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     jscs = require('gulp-jscs'),
+    eslint = require('gulp-eslint'),
     jshint = require('gulp-jshint');
     
     
