@@ -1,6 +1,13 @@
 ## Tracker
 Frontend js library for tracking events
 
+### Import
+
+```html
+  <!-- Tracker -->
+  <script src="tracker.min.js"></script>
+```
+
 ### Usage
 
 ```javascript
