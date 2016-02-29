@@ -34,7 +34,9 @@ Frontend js library for tracking events
 ```
 
 
+### Contributing
 
+- Please use the [issue tracker](https://github.com/voidabhi/Tracker/issues) to report any bugs or file feature requests.
 
 
 ### License
