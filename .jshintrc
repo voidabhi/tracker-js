@@ -17,5 +17,8 @@
   "unused"   : true,
   "strict"   : false,
   "esnext"   : true,
-  "node"     : true
+  "node"     : true,
+  "globals"  : {
+    "window": true
+  }
 }
