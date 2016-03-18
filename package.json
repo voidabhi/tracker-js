@@ -1,0 +1,29 @@
+{
+  "name": "tracker",
+  "version": "1.0.0",
+  "description": "Frontend js library for tracking events",
+  "main": "tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voidabhi/Tracker.git"
+  },
+  "keywords": [
+    "tracker",
+    "tracking"
+  ],
+  "author": "Abhijeet Mohan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voidabhi/Tracker/issues"
+  },
+  "homepage": "https://github.com/voidabhi/Tracker#readme",
+  "dev-dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0"
+  }
+}
