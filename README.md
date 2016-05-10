@@ -24,13 +24,13 @@ Frontend js library for tracking events
   })();
   
   // Create an event queue for the tracking events before script is loaded
-  if(!window._szTrackerEventQueue) {
-      window._szTrackerEventQueue = [];
+  if(!window._TrackerEventQueue) {
+      window._TrackerEventQueue = [];
   }
-  window._szTrackerEventQueue.push({eventName: 'm_new_load'});
+  window._TrackerEventQueue.push({eventName: 'm_new_load'});
   
   // Track the events
-  szTrack({eventName: 'button_clicked', foo:'bar'});
+  Track({eventName: 'button_clicked', foo:'bar'});
 ```
 
 
