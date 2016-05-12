@@ -5,12 +5,12 @@
                 function submit() {
                     alert('clicked');
                     // trigger tracking function with data
-                    szTrack({eventName: 'button_clicked', foo:'bar'});
+                    amTrack({eventName: 'button_clicked', foo:'bar'});
                 }
                 function submit2() {
                     alert('clicked');
                     // trigger tracking function with data
-                    szTrack({eventName: 'button_2_clicked'});
+                    amTrack({eventName: 'button_2_clicked'});
                 }
           </script>
         </head>
@@ -47,7 +47,7 @@
         };
 
         // declaring event queue -  it saves all the events to be tracked before tracking script is loaded
-        var _szTrackerEventQueue = _szTrackerEventQueue || [];
+        var _amTrackerEventQueue = _amTrackerEventQueue || [];
 
         // loading script on upload dom loading
         document.addEventListener('DOMContentLoaded', function () {
@@ -59,10 +59,10 @@
 
     <script type="text/javascript">
         // register onload event on event queue
-        if(!window._szTrackerEventQueue) {
-            window._szTrackerEventQueue = [];
+        if(!window._amTrackerEventQueue) {
+            window._amTrackerEventQueue = [];
         }
         // adding load event to queue
-        window._szTrackerEventQueue.push({eventName: 'm_new_load'});
+        window._amTrackerEventQueue.push({eventName: 'm_new_load'});
     </script>
           </html>
