@@ -5,7 +5,7 @@ Frontend js library for tracking events
 
 ```html
   <!-- Tracker -->
-  <script src="tracker.min.js"></script>
+  <script type="text/javascript" src="tracker.min.js"></script>
 ```
 
 ### Usage
