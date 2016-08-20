@@ -1,4 +1,3 @@
-
 'use strict';
 
 // endpoint where data needs to be sent
@@ -12,9 +11,9 @@ var SERVER_URL = 'http://localhost:3030/clientdetails',
 function getQueryString(e) {
     var n = '';
     for (var obj in e) {
-      if (e.hasOwnProperty(obj)) {
-          n += obj + '=' + encodeURIComponent(e[obj]) + '&';
-      }
+        if (e.hasOwnProperty(obj)) {
+            n += obj + '=' + encodeURIComponent(e[obj]) + '&';
+        }
     }
     return n + 'cookie=' + visitCookie + '&time=' + new Date();
 }
@@ -25,12 +24,12 @@ function getQueryString(e) {
 function sendDataToTracker(src) {
     var head = document.getElementsByTagName('head')[0],
         script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.onload = function () {
-            script.remove();
-        };
-        script.src = src;
-        head.appendChild(script);
+    script.type = 'text/javascript';
+    script.onload = function () {
+        script.remove();
+    };
+    script.src = src;
+    head.appendChild(script);
 }
 
 /*
@@ -46,9 +45,9 @@ function doAsyncEventPost(obj) {
 */
 
 function flushTrackerEventQueue() {
-    if ('_amTrackerEventQueue' in window) {
-        for (var e = 0; e < _amTrackerEventQueue.length; ++e) {
-            var n = _amTrackerEventQueue[e];
+    if ('_TrackerEventQueue' in window) {
+        for (var e = 0; e < _TrackerEventQueue.length; ++e) {
+            var n = _TrackerEventQueue[e];
             doAsyncEventPost(n);
         }
     }
@@ -57,14 +56,13 @@ function flushTrackerEventQueue() {
 /*
  - setting document cookie
  - initializing track function to send event data to server
-    - send data to server with amTrack(<js object>)
+    - send data to server with Track(<js object>)
  - sending all the events already present in event queue to server
  - sending user details to server
-
 */
 document.cookie = visitCookie;
-window.amTrack = function (e) {
-        doAsyncEventPost(e);
+window.Track = function (e) {
+    doAsyncEventPost(e);
 };
 flushTrackerEventQueue();
 if ('TRACKER_CLIENT_DATA' in window) {
@@ -72,5 +70,5 @@ if ('TRACKER_CLIENT_DATA' in window) {
     var clientApi = SERVER_URL;
     sendDataToTracker(clientApi + '?' + getQueryString(TRACKER_CLIENT_DATA));
 } else {
-  window.console.error('Tracker : TRACKER_CLIENT_DATA variable is required');
+    window.console.error('Tracker : TRACKER_CLIENT_DATA variable is required');
 }
