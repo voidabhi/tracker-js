@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint src",
-    "compress": "npm prune && ./node_modules/uglify src/index.js -o tracker.min.js"
+    "compress": "npm prune && ./node_modules/uglify src/index.js -o tracker.min.js",
+    "build": "npm run eslint && npm run compress"
   },
   "repository": {
     "type": "git",
