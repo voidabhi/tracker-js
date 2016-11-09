@@ -5,9 +5,9 @@
   "main": "tracker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint src",
+    "lint": "jshint . && eslint src",
     "compress": "npm prune && ./node_modules/uglify src/index.js -o tracker.min.js",
-    "build": "npm run eslint && npm run compress"
+    "build": "npm run lint && npm run compress"
   },
   "repository": {
     "type": "git",
