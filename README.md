@@ -1,6 +1,12 @@
 ## Tracker
 Frontend js library for tracking events
 
+### Building
+
+```sh
+$ npm run build
+```
+
 ### Import
 
 ```html
